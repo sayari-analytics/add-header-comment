@@ -1,0 +1,6 @@
+- id: add-header
+  name: Add header
+  description: "Add or update the header of a file"
+  entry: add-header
+  language: python
+  types: [text]

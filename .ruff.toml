@@ -1,0 +1,86 @@
+# Rules: https://docs.astral.sh/ruff/rules/
+# default config: https://github.com/astral-sh/ruff#configuration
+
+line-length = 120
+
+target-version = "py38"
+
+lint.pydocstyle.convention = "google"
+
+lint.extend-select = [
+  "W",   # whitespace
+  "I",   # imports
+  "N",   # pep8-naming
+  "D",   # pydocstyle
+  "UP",  # pyupgrade
+  "B",   # flake8-bugbear
+  "A",   # flake8-builtins
+  "COM", # flake8-commas
+  "C4",  # flake8-comprehensions
+  "ISC", # flake8-implicit-str-concat
+  "Q",   # flake8-quotes
+  "RSE", # flake8-raise
+  "TID", # flake8-tidy-imports
+
+  # flake-8-todos
+  "TD001", # invalid-todo-tag
+  "TD004", # missing-todo-colon
+  "TD005", # missing-todo-description
+  "TD006", # invalid-todo-capitalization
+  "TD007", # missing-space-after-todo-colon
+
+  # flake8-import-conventions
+  "ICN001", # unconventional-import-alias
+  "ICN003", # banned-import-from
+
+  # flake8-type-checking
+  "TCH001", # typing-only-first-party-import
+  "TCH002", # typing-only-third-party-import
+  "TCH003", # typing-only-standard-library-import
+  "TCH004", # runtime-import-in-type-checking-block
+  "TCH005", # empty-type-checking-block
+
+  # additional ruff settings
+  "RUF005", # collection literal concatenation
+  "RUF010", # fstring conversion
+  "RUF100", # unused noqa
+]
+
+lint.extend-ignore = [
+  "D104", # undocumented public package
+  "D107", # undocumented public init
+  "D203", # one blank line before class
+  "D211", # blank line before class
+  "D213", # multi line summary second line
+  "E501", # line too long
+]
+
+[lint.per-file-ignores]
+"tests/*" = ["D"]
+
+[lint.isort]
+
+combine-as-imports = true
+
+[lint.flake8-import-conventions]
+
+banned-from = [
+  # standard ones
+  "argparse",
+  "datetime",
+  "json",
+  "os",
+  "re",
+]
+
+[lint.flake8-tidy-imports]
+
+ban-relative-imports = "all"
+
+[lint.flake8-import-conventions.extend-aliases]
+
+"datetime" = "dt"
+
+[lint.flake8-type-checking]
+
+quote-annotations = true
