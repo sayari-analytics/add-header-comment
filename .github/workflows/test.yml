@@ -19,10 +19,11 @@ jobs:
     timeout-minutes: 60
 
     strategy:
+      fail-fast: false
       matrix:
         include:
           - python-version: "3.5"
-            runs-on: ubuntu-24.04
+            runs-on: ubuntu-22.04
           - python-version: "3.6"
             runs-on: ubuntu-24.04
           - python-version: "3.7"
