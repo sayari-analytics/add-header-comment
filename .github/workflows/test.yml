@@ -13,8 +13,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  style:
-    name: Style
+  test:
+    name: Test
     runs-on: ${{ matrix.runs-on }}
     timeout-minutes: 60
 
