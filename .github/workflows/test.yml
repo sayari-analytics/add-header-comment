@@ -44,6 +44,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.python-version }}
+        if: ${{ !matrix.image }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -60,11 +61,11 @@ jobs:
             -d \
             -t \
             --workdir "$GITHUB_WORKSPACE" \
-            -v "${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE}" \
+            -v "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE" \
             --entrypoint bash \
             '${{ matrix.image }}'
 
-          docker exec "add-header-test" "${GITHUB_WORKSPACE}/install-and-run-tests.sh"
+          docker exec "add-header-test" "$GITHUB_WORKSPACE/install-and-run-tests.sh"
 
       - name: Print code coverage
         run: coverage report -m | tee coverage.log
