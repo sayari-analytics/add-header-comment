@@ -10,3 +10,5 @@ pip install -e .
 set +x
 
 ./run-tests.sh
+
+coverage report -m | tee coverage.log

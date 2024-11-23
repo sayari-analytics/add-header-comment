@@ -67,8 +67,5 @@ jobs:
 
           docker exec "add-header-test" "$GITHUB_WORKSPACE/install-and-run-tests.sh"
 
-      - name: Print code coverage
-        run: coverage report -m | tee coverage.log
-
       - name: Check if coverage is 100%
         run: grep "100%" coverage.log
