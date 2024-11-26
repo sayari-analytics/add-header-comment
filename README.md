@@ -84,14 +84,14 @@ add-header \
 If the existing header is like this:
 
 ```markdown
-<!-- There are no comment text between this old header and the new one -->
+<!-- There is no common text between this old header and the new one -->
 # Hello World
 ```
 
 Outputs a header like this (there is no fuzzy string matching or running a separate command to remove the old header required):
 
 ```markdown
-<!-- This is the header comment -->
+<!-- This is the new header comment -->
 # Hello World
 ```
 
