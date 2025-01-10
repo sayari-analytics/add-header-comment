@@ -17,6 +17,11 @@ setup(
     description="Add or update the header of a file.",
     long_description=DESCRIPTION,
     long_description_content_type="text/markdown",
+    author="Nathaniel Young",
+    author_email="nyoung@sayari.com",
+    maintainer="Sayari Labs",
+    maintainer_email="",
+    license="MIT",
     url="https://github.com/sayari-analytics/pre-commit-add-header",
     project_urls={
         "Bug Tracker": "https://github.com/sayari-analytics/pre-commit-add-header/issues",
@@ -32,6 +37,7 @@ setup(
     classifiers=[
         "Environment :: Console",
         "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
