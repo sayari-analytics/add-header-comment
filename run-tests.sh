@@ -55,7 +55,7 @@ function testCaseAssert() {
 add-header --help > /dev/null
 # intializes the coverage file
 # uses coverage cli to call the Python module so that the code coverage can be calculated
-coverage run add_header --help > /dev/null
+coverage run add_header_comment --help > /dev/null
 
 # runs main test cases
 for testPath in ${@:-tests/*/}; do

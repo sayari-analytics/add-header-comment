@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-coverage run --append add_header \
+coverage run --append add_header_comment \
   --header-filepath tests/header-multiline.txt \
   --start-header-after "custom-start-header-search" \
   --ignore-below-string "custom-ignore-below" \

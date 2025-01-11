@@ -1,4 +1,4 @@
-# pre-commit add header
+# add header comment
 
 A [pre-commit](https://pre-commit.com) hook to automatically add or update a header of a text file with the appropriate comment style for your source code.
 
@@ -21,7 +21,7 @@ This is how to set up the pre-commit hook. You may consider running the hook mul
 
 ```yaml
 repos:
-  - repo: https://github.com/sayari-analytics/pre-commit-add-header
+  - repo: https://github.com/sayari-analytics/add-header-comment
     rev: v1.0.0
     hooks:
       - id: add-header
@@ -54,16 +54,18 @@ One thing to note is that the filepaths you want this script to run on are passe
 If you prefer to use this tool without pre-commit, you can install the standalone Python package.
 
 ```bash
-pip install add-header
+pip install add-header-comment
 ```
 
 After installing the package, you can use the cli tool by typing:
 
 ```bash
 # with the installed console script entry point
+add-header-comment -h
+# or the use the alias
 add-header -h
 # or through the Python module
-python -m add_header -h
+python -m add_header_comment -h
 ```
 
 ## Examples

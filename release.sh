@@ -29,18 +29,18 @@ currentVersion=$(grep -oP 'version="\K[^"]+' setup.py)
 # modify files with the version in it
 operatingSystem=$(uname -s)
 if [[ "$operatingSystem" == "Darwin" ]]; then
-  find . -type f -exec sed -i '.old' "s+$currentVersion+$newVersion+g" {} \;
-  find . -type f -name '*.old' -delete
+  sed -i '.old' "s+$currentVersion+$newVersion+g" README.md setup.py
+  rm README.md.old setup.py.old
 elif [[ "$operatingSystem" == "Linux" ]]; then
-  find . -type f -exec sed -i "s+$currentVersion+$newVersion+g" {} \;
+  sed -i "s+$currentVersion+$newVersion+g" README.md setup.py
 else
   echo "Unsupported operating system"
   exit 1
 fi
 
 # commit and tag
-git add setup.py
 git add README.md
+git add setup.py
 git commit -m "chore(release): v$newVersion"
 echo "Creating git tag v$newVersion"
 git tag "v$newVersion"

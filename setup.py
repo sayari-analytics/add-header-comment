@@ -12,9 +12,9 @@ with open(os.path.join(ROOT_DIR, "README.md")) as f:
 
 
 setup(
-    name="add-header",
+    name="add-header-comment",
     version="1.0.0",
-    description="Add or update the header of a file.",
+    description="Add or update the header of a file with the appropriate comment style.",
     long_description=DESCRIPTION,
     long_description_content_type="text/markdown",
     author="Nathaniel Young",
@@ -22,16 +22,17 @@ setup(
     maintainer="Sayari Labs",
     maintainer_email="",
     license="MIT",
-    url="https://github.com/sayari-analytics/pre-commit-add-header",
+    url="https://github.com/sayari-analytics/add-header-comment",
     project_urls={
-        "Bug Tracker": "https://github.com/sayari-analytics/pre-commit-add-header/issues",
-        "Source Code": "https://github.com/sayari-analytics/pre-commit-add-header",
+        "Bug Tracker": "https://github.com/sayari-analytics/add-header-comment/issues",
+        "Source Code": "https://github.com/sayari-analytics/add-header-comment",
     },
     packages=find_packages(exclude=("tests",)),
     python_requires=">=3.5",
     entry_points={
         "console_scripts": [
-            "add-header = add_header.__main__:main",
+            "add-header = add_header_comment.__main__:main",
+            "add-header-comment = add_header_comment.__main__:main",
         ],
     },
     classifiers=[

@@ -1,9 +1,9 @@
-"""Adds or updates header to files."""
+"""Adds or updates a header comment for a set of files."""
 
 from typing import List
 
 
-def add_header(
+def add_header_comment(
     filepaths: List[str],
     header_filepath: str,
     comment_style: str,
@@ -169,7 +169,7 @@ def main():
     """Main program to run with command line options."""
     import argparse
 
-    parser = argparse.ArgumentParser(prog="Adds or updates header")
+    parser = argparse.ArgumentParser(prog="Adds or updates a header comment for a set of files.")
     parser.add_argument("filepaths", nargs="+", help="The filepath to add the header to")
     parser.add_argument("--header-filepath", help="The filepath to the header file", required=True)
     parser.add_argument(
@@ -218,7 +218,7 @@ def main():
 
     args = parser.parse_args()
 
-    add_header(**vars(args))
+    add_header_comment(**vars(args))
 
 
 if __name__ == "__main__":

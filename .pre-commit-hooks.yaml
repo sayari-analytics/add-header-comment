@@ -1,6 +1,12 @@
 - id: add-header
-  name: Add header
-  description: "Add or update the header of a file"
+  name: Add header Comment
+  description: "Add or update the header comment of a file"
   entry: add-header
+  language: python
+  types: [text]
+- id: add-header-comment
+  name: Add header Comment
+  description: "Add or update the header comment of a file"
+  entry: add-header-comment
   language: python
   types: [text]
