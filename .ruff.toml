@@ -3,7 +3,7 @@
 
 line-length = 120
 
-target-version = "py38"
+target-version = "py37"
 
 lint.pydocstyle.convention = "google"
 
