@@ -13,7 +13,7 @@ with open(os.path.join(ROOT_DIR, "README.md")) as f:
 
 setup(
     name="add-header-comment",
-    version="1.0.0",
+    version="1.0.1",
     description="Add or update the header of a file with the appropriate comment style.",
     long_description=DESCRIPTION,
     long_description_content_type="text/markdown",

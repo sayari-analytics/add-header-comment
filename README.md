@@ -22,7 +22,7 @@ This is how to set up the pre-commit hook. You may consider running the hook mul
 ```yaml
 repos:
   - repo: https://github.com/sayari-analytics/add-header-comment
-    rev: v1.0.0
+    rev: v1.0.1
     hooks:
       - id: add-header
         name: Add or update header for Python files
