@@ -65,7 +65,7 @@ def add_header_comment(
             return "\n".join(lines)
         else:
             line_prefix = comment_prefix + " " if comment_prefix else ""
-            return line_prefix + line
+            return (line_prefix + line).rstrip()
 
     # creates header comment string
     header_comment = ""
