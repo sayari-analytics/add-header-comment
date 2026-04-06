@@ -19,11 +19,14 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
         with:
           python-version: "3.8"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
 
       - name: Get exact python version
         id: python-version
@@ -31,7 +34,7 @@ jobs:
           echo "python_version=$(python --version)" >> $GITHUB_ENV
 
       - name: Cache pre-commit environment
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         id: cache-pre-commit
         with:
           path: |
@@ -45,7 +48,7 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           pip install --upgrade pip
-          pip install pre-commit
+          uv pip install pre-commit --exclude-newer $(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
 
       - name: Run Style Check
         run: |
