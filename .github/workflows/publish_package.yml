@@ -12,23 +12,26 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
         with:
           python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install build
+          uv pip install build --exclude-newer $(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
 
       - name: Build package
         run: python -m build
 
       - name: Publish distribution Package to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # release/v1
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
