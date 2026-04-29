@@ -11,18 +11,18 @@ repos:
       - id: check-shebang-scripts-are-executable
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.37.0
+    rev: 0.37.1
     hooks:
       - id: check-dependabot
       - id: check-github-workflows
 
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: v1.23.1
+    rev: v1.24.1
     hooks:
       - id: zizmor
         args:
           - --fix=safe  # change to unsafe-only to enable unsafe fixes
-          - --min-severity=high
+          - --min-severity=medium
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.7.1
