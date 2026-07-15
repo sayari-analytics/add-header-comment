@@ -21,6 +21,7 @@ repos:
     hooks:
       - id: zizmor
         args:
+          - --offline
           - --fix=safe  # change to unsafe-only to enable unsafe fixes
           - --min-severity=medium
 
